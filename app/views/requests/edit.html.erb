@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @request.errors.any? %>
+  <% @request.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Request #<%= @request.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_request/<%= @request.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for requester_id -->
+      <div class="form-group">
+        <label for="requester_id" class="control-label">
+          Requester
+        </label>
+
+        <input type="text" id="requester_id" name="requester_id" placeholder="Requester" class="form-control" value="<%= @request.requester_id %>">
+      </div>
+
+      <!-- Label and input for keyword_id -->
+      <div class="form-group">
+        <label for="keyword_id" class="control-label">
+          Keyword
+        </label>
+
+        <input type="text" id="keyword_id" name="keyword_id" placeholder="Keyword" class="form-control" value="<%= @request.keyword_id %>">
+      </div>
+
+      <!-- Label and input for action_id -->
+      <div class="form-group">
+        <label for="action_id" class="control-label">
+          Action
+        </label>
+
+        <input type="text" id="action_id" name="action_id" placeholder="Action" class="form-control" value="<%= @request.action_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Request
+      </button>
+      or
+      <a href="/requests/<%= @request.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
