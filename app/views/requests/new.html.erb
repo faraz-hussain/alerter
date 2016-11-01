@@ -24,7 +24,7 @@
           Requester
         </label>
 
-        <input type="text" id="requester_id" name="requester_id" placeholder="Requester" class="form-control" value="<%= @request.requester_id %>">
+        <%= select_tag(:requester_id, options_from_collection_for_select(Requester.all, :id, :email, @request.requester_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for keyword_id -->
