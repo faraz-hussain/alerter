@@ -17,7 +17,7 @@
 
       <% @requests.each do |request| %>
       <tr>
-        <td><%= request.requester_id %></td>
+        <td><%= request.requester.email %></td>
         <td><%= request.keyword_id %></td>
         <td><%= request.action_id %></td>
         <td>
