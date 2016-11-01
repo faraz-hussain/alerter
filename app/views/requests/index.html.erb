@@ -19,7 +19,7 @@
       <tr>
         <td><%= request.requester.email %></td>
         <td><%= request.keyword.created_at %></td>
-        <td><%= request.action_id %></td>
+        <td><%= request.action.created_at %></td>
         <td>
           <a href="/requests/<%= request.id %>" class="btn btn-primary">Show</a>
           <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">Edit</a>
