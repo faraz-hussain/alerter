@@ -6,6 +6,10 @@ class Keyword < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :requesters,
+             :through => :requests,
+             :source => :requester
+
   # Validations
 
 end

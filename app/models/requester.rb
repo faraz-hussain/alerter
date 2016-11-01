@@ -6,6 +6,10 @@ class Requester < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :keywords,
+             :through => :requests,
+             :source => :keyword
+
   # Validations
 
   # Include default devise modules. Others available are:
