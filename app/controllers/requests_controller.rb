@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all
+    @requests = Request.page(params[:page])
   end
 
   def show

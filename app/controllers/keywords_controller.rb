@@ -1,6 +1,6 @@
 class KeywordsController < ApplicationController
   def index
-    @keywords = Keyword.all
+    @keywords = Keyword.page(params[:page])
   end
 
   def show
