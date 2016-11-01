@@ -19,13 +19,7 @@
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
       <!-- Label and input for requester_id -->
-      <div class="form-group">
-        <label for="requester_id" class="control-label">
-          Requester
-        </label>
-
-        <%= select_tag(:requester_id, options_from_collection_for_select(Requester.all, :id, :email, @request.requester_id), :class => "form-control") %>
-      </div>
+      <input type="hidden" name="requester_id" value="<%= current_user.id %>">
 
       <!-- Label and input for keyword_id -->
       <div class="form-group">
