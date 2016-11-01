@@ -20,3 +20,61 @@
     </div>
   </div>
 </div>
+
+<!-- A Keyword has many requests -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Requests
+      </li>
+
+      <% @keyword.requests.each do |request| %>
+        <li class="list-group-item">
+          <a href="/requests/<%= request.id %>">
+            <%= request.requester_id %>
+          </a>
+          <a href="/requests/<%= request.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/requests/<%= request.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_request/<%= request.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Keyword has many requesters -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Requesters
+      </li>
+
+      <% @keyword.requesters.each do |requester| %>
+        <li class="list-group-item">
+          <a href="/requesters/<%= requester.id %>">
+            <%= requester.email %>
+          </a>
+          <a href="/requesters/<%= requester.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/requesters/<%= requester.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_requester/<%= requester.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
