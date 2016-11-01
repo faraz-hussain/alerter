@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h3>Keyword #<%= @keyword.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/keywords" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/keywords/<%= @keyword.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_keyword/<%= @keyword.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
