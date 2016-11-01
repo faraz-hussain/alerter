@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :requesters
+  # Routes for the Requester resource:
+  # READ
+  get "/requesters", :controller => "requesters", :action => "index"
+  get "/requesters/:id", :controller => "requesters", :action => "show"
+
+
   # Routes for the Keyword resource:
   # CREATE
   get "/keywords/new", :controller => "keywords", :action => "new"
