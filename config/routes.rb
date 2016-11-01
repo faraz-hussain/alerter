@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "keywords#index"
   # Routes for the Action resource:
   # CREATE
   get "/actions/new", :controller => "actions", :action => "new"
